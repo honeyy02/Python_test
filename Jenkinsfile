@@ -12,11 +12,9 @@ pipeline{
         stage('Run tests with coverage'){
             steps{
                  script {
-                    try {
-                        sh 'pytest --cov=my_app test/'
-                    } catch (Exception e) {
-                        echo "Tests failed, but continuing to generate the report."
-                    }
+                   
+                        sh 'pytest --cov=my_app test/' || echo "Tests failed, but continuing to generate the report."
+                    
                 }   
             }
         }
