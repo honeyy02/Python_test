@@ -18,8 +18,7 @@ pipeline{
                     } catch (Exception e) {
                         echo "Tests failed, but continuing to generate the report."
                     }
-                }   }
-            }
+                }   
             }
         }
         stage('Generate HTML report'){
