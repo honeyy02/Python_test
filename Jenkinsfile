@@ -13,7 +13,7 @@ pipeline{
             steps{
                  script {
                     try {
-                        sh 'pytest --cov=test test/'
+                        sh 'pytest --cov=my_app test/'
                     } catch (Exception e) {
                         echo "Tests failed, but continuing to generate the report."
                     }
@@ -22,7 +22,7 @@ pipeline{
         }
         stage('Generate HTML report'){
             steps{
-                sh 'pytest --cov=test --cov-report=html test/'
+                sh 'pytest --cov=my_app --cov-report=html test/'
             }
         }
         stage('Archive the html report'){
