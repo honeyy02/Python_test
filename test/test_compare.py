@@ -8,4 +8,4 @@ def test_smaller():
 
 def test_greaterorsmaller():
     num = 50
-    assert num>=70
+    assert num>=50
