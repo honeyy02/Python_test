@@ -21,7 +21,7 @@ pipeline{
         }
         stage('Archive the html report'){
             steps{
-                archiveArtifacts artifacts: 'htmlcov/**'
+                archiveArtifacts artifacts: 'htmlcov/**' ,allowEmptyArchive: true
             }
         }
     }
