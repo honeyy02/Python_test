@@ -14,7 +14,7 @@ pipeline{
                 try{
                    sh 'pytest --cov=test test/' 
                 }
-                catch{
+                catch(Execption e){
                     echo "Test cases failed , but pipeline will continue"
                 }
             }
