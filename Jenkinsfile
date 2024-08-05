@@ -14,16 +14,16 @@ pipeline{
                 sh 'pytest --cov=test test/'
             }
         }
-        stage('Generate HTML report'){
-            steps{
-                sh 'pytest --cov=test --cov-report=html test/'
-            }
-        }
-        stage('Archive the html report'){
-            steps{
-                archiveArtifacts artifacts: 'htmlcov/**'
-            }
-        }
+        // stage('Generate HTML report'){
+        //     steps{
+        //         sh 'pytest --cov=test --cov-report=html test/'
+        //     }
+        // }
+        // stage('Archive the html report'){
+        //     steps{
+        //         archiveArtifacts artifacts: 'htmlcov/**'
+        //     }
+        // }
     }
     post{
         always{
