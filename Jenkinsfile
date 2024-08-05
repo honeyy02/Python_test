@@ -13,14 +13,14 @@ pipeline{
             steps{
                  script {
                    
-                        sh 'pytest --cov=my_app test/' || echo "Tests failed, but continuing to generate the report."
+                        sh 'pytest --continue-on-collection-errors --cov=my_app test/' || echo "Tests failed, but continuing to generate the report."
                     
                 }   
             }
         }
         stage('Generate HTML report'){
             steps{
-                sh 'pytest --cov=my_app --cov-report=html test/'
+                sh 'pytest --continue-on-collection-errors  --cov=my_app --cov-report=html test/'
             }
         }
         stage('Archive the html report'){
