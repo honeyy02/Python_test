@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Install dependecies'){
             steps{
-                sh 'pip intall pytest pytest-cov'
+                sh 'pip install pytest pytest-cov'
             }
         }
         stage('Run tests with coverage'){
