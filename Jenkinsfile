@@ -12,7 +12,6 @@ pipeline{
         stage('Run tests with coverage'){
             steps{
                  script {
-                    // Run tests and measure coverage, continue even if tests fail
                     try {
                         sh 'pytest --cov=test test/'
                     } catch (Exception e) {
