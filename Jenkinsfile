@@ -11,7 +11,12 @@ pipeline{
         }
         stage('Run tests with coverage'){
             steps{
-                sh 'pytest --cov=test test/ || true'
+                try{
+                   sh 'pytest --cov=test test/' 
+                }
+                catch{
+                    echo "Test cases failed , but pipeline will continue"
+                }
             }
         }
         stage('Generate HTML report'){
