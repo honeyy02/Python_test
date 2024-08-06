@@ -28,9 +28,9 @@ pipeline {
     post {
         always {
             script {
-                def buildNumber = currentBuild.number
-                sh "mv htmlcov htmcov_${buildNumber}"
-                archiveArtifacts artifacts: 'htmlcov_${buildNumber}/**', allowEmptyArchive: true
+                // def buildNumber = currentBuild.number
+                // sh "mv htmlcov htmcov_${buildNumber}"
+                archiveArtifacts artifacts: 'htmlcov/**', allowEmptyArchive: true
                 echo "::: Pipeline executed successfully :::"
          }
     }
