@@ -34,7 +34,7 @@ pipeline {
                 echo "::: Pipeline executed successfully :::"
          }
     }
-        success {
+    success {
             script {
                 // Set the build description with the build number on successful build
                 currentBuild.description = "Last successful build number: ${currentBuild.number}"
